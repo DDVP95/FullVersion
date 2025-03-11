@@ -1,0 +1,44 @@
+# ==========================
+# Database Configuration
+# ==========================
+DB_URL=
+DB_USERNAME=
+DB_PASSWORD=
+
+# ==========================
+# JPA / Hibernate Settings
+# ==========================
+JPA_HIBERNATE_DDL_AUTO=update
+JPA_SHOW_SQL=true
+JPA_HIBERNATE_DIALECT=org.hibernate.dialect.MySQL8Dialect
+
+# ==========================
+# Server Configuration
+# ==========================
+SERVER_PORT=8080
+
+# ==========================
+# Application Security
+# ==========================
+SECURITY_USER_NAME=
+SECURITY_USER_PASSWORD=
+
+# ==========================
+# Logging Levels
+# ==========================
+LOGGING_LEVEL_SPRING=INFO
+LOGGING_LEVEL_CHESSAPP=DEBUG
+
+# ==========================
+# OAuth2 - Google Authentication
+# ==========================
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GOOGLE_REDIRECT_URI=
+GOOGLE_AUTHORIZATION_GRANT_TYPE=
+GOOGLE_SCOPE=
+GOOGLE_CLIENT_NAME=
+GOOGLE_AUTHORIZATION_URI=
+GOOGLE_TOKEN_URI=
+GOOGLE_USER_INFO_URI=
+GOOGLE_USER_NAME_ATTRIBUTE=

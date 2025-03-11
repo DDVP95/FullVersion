@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzles by Theme</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <!-- Include additional CSS as needed -->
+</head>
+<body>
+  <!-- Navigation Bar (repeat or include via fragment) -->
+  <nav class="navbar">
+      <div class="logo">ChessSite</div>
+      <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <!-- Other navbar items if needed -->
+      </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Puzzles by Theme</h1>
+    <!-- Display the selected theme using the request parameter -->
+    <h2 th:text="'Theme: ' + ${param.theme}">Theme: </h2>
+    
+    <!-- List of puzzles for the selected theme -->
+    <div class="puzzle-list">
+      <!-- The controller should pass a list of puzzles (e.g., each with a title and ID) -->
+      <div th:each="puzzle : ${puzzles}">
+          <div class="puzzle">
+            <h3 th:text="${puzzle.title}">Puzzle Title</h3>
+            <!-- You could embed a chessboard or link to a puzzle page -->
+            <div id="board-" th:attr="id=${'board-' + puzzle.id}" class="puzzle-board" style="width: 400px; margin: 0 auto;"></div>
+          </div>
+      </div>
+      
+      <!-- If no puzzles are available, you might show a friendly message -->
+      <p th:if="${#lists.isEmpty(puzzles)}">No puzzles found for this theme.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ChessSite. All rights reserved.</p>
+  </footer>
+</body>
+</html>
